@@ -35,7 +35,7 @@ def load_data_tif(tif_file, workspace, default_style, additional_styles=[]):
         print(f"Failed to connect to GeoServer: {e}")
         return
     # Ensure the workspace exists
-    if workspace not in [ws['name'] for ws in geo.get_workspaces()]:
+    if workspace not in geo.get_workspaces():
         geo.create_workspace(workspace, geoserver_url)
     # Publish the GeoTIFF to GeoServer
     geo.create_coveragestore(layer_name, tif_file, workspace=workspace)
