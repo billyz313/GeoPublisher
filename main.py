@@ -39,7 +39,7 @@ def load_data_tif(tif_file, workspace, default_style, additional_styles=[]):
     if workspace not in [ws['name'] for ws in workspaces]:
         geo.create_workspace(workspace, geoserver_url)
     # Publish the GeoTIFF to GeoServer
-    geo.create_coveragestore(layer_name, tif_file, workspace=workspace)
+    geo.create_coveragestore(path=tif_file, workspace=workspace, layer_name=layer_name)
     # Set the default style to 'crop_extent'
     geo.publish_style(layer_name, style_name=default_style, workspace=workspace)
     # Add 'crop_extent_compare' as an additional style
