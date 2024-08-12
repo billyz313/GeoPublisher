@@ -1,0 +1,8 @@
+name: GeoPublisher
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - rasterio
+  - gdal
+  - geoserver-rest
