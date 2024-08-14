@@ -118,12 +118,18 @@ if __name__ == "__main__":
     # load_data_netcdf("/mnt/rdst/crops/bhutan/crop_extent/crop-extent.20020101T000000Z.bhutan.30m.yearly.nc4", "crop_extent", "crop-extent.20020101T000000Z.bhutan.30m.yearly.tif", "crops", "crop_extent", ["crop_extent_compare"])
     # load_data_tif("/mnt/rdst/crops/bhutan/crop_extent/Bhutan_croplandextent_2002_ps_20Apr24.tif", "crops", "crop_extent", ["crop_extent_compare"])
 
+    # # Example usage: rename file
     # filepath = "D:\\mnt\\cropmonitor\\bhutan\\crop_extent\\Bhutan_croplandextent_2002_ps_20Apr24.tif"
     # input_pattern = r"Bhutan_croplandextent_(?P<year>\d{4})_ps_20Apr24\.tif"
     # output_pattern = "crop-extent.{year}0101T000000Z.bhutan.30m.yearly.tif"
-    #
     # rename_file(filepath, input_pattern, output_pattern)
 
-    # Example usage: processing all GeoTIFF files in a directory
-    process_directory("/mnt/rdst/crops/bhutan/crop_extent/", file_type='tif', workspace="crops",
-                      default_style="crop_extent", additional_styles=["crop_extent_compare"])
+    # # Example usage: rename files in directory
+    # directory_location = "D:\\mnt\\cropmonitor\\bhutan\\maize"
+    # input_pattern = r"maize-area.(?P<year>\d{4})0101T000000Z.bhutan.30m.yearly.nc4"
+    # output_pattern = "maize-area.{year}0101T000000Z.bhutan.30m.yearly.tif"
+    # rename_files(directory_location, input_pattern, output_pattern)
+
+    # # Example usage: processing all GeoTIFF files in a directory
+    process_directory("/mnt/rdst/crops/bhutan/maize/", file_type='tif', workspace="crops",
+                      default_style="maize", additional_styles=["maize_compare"])
